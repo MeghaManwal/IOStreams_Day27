@@ -17,7 +17,7 @@ public class DataFile {
         this.file = new File(fileName);
     }
 
-    public void save(Person person) {
+    public void addData(Person person) {
         try(BufferedWriter writer = new BufferedWriter(new FileWriter(file, true))) {
             writer.write(person.getFirstname()+"\n" + person.getLastname() + "\n"+ person.getAddress() +"\n" + person.getCity()+"\n"+person.getState()+
             		"\n"+person.getZip()+"\n"+ person.getphoneNumber() + "\n" + person.getemail() + "\n\n");
@@ -27,7 +27,7 @@ public class DataFile {
         }
      }
 
-     public List<Person> loadAll() throws IOException {
+     public List<Person> readData() throws IOException {
         List<Person> people = new ArrayList<Person>();
 
         @SuppressWarnings("resource")

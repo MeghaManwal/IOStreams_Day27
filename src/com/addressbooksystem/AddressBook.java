@@ -13,35 +13,35 @@ public class AddressBook {
 	public AddressBook( DataFile dataFile) throws IOException {
 		s = new Scanner(System.in);
 		this.dataFile = dataFile;
-		people = dataFile.loadAll();
+		people = dataFile.readData();
 	}
 	
 	public AddressBook(String fileName) throws IOException {
 		this(new DataFile(fileName));
 	}
 	
-    private Person getPersonInformation() {
+       public Person getPersonInformation() {
 		
-        System.out.println("Enter Firstname: ");
-        String firstname = s.nextLine();
-        String firstname1 = s.nextLine();
-        System.out.println("Enter Lastname: ");
-        String lastname = s.nextLine();
-        System.out.println("Enter Address: ");
-        String address = s.nextLine();
-        System.out.println("Enter City: ");
-        String city = s.nextLine();
-        System.out.println("Enter State: ");
-        String state = s.nextLine();
-        System.out.println("Enter ZipCode: ");
-        String zip = s.nextLine();
-        System.out.println("Enter Phone number: ");
-        String phoneNumber = s.nextLine();
-        System.out.println("Enter EmailId: ");
-        String email = s.nextLine();
+                System.out.println("Enter Firstname: ");
+                String firstname = s.nextLine();
+                String firstname1 = s.nextLine();
+                System.out.println("Enter Lastname: ");
+                String lastname = s.nextLine();
+                System.out.println("Enter Address: ");
+                String address = s.nextLine();
+                System.out.println("Enter City: ");
+                String city = s.nextLine();
+                System.out.println("Enter State: ");
+                String state = s.nextLine();
+                System.out.println("Enter ZipCode: ");
+                String zip = s.nextLine();
+                System.out.println("Enter Phone number: ");
+                String phoneNumber = s.nextLine();
+                System.out.println("Enter EmailId: ");
+                String email = s.nextLine();
         
-        return new Person(firstname1, lastname, address, city, state, zip, phoneNumber, email);
-    }
+                return new Person(firstname1, lastname, address, city, state, zip, phoneNumber, email);
+      }
     
 	public void ActionPerform() {
 		while(true) {
@@ -54,7 +54,7 @@ public class AddressBook {
 	        	
 	        	case 1:
 	        		Person person = getPersonInformation();
-	        		dataFile.save(person);
+	        		dataFile.addData(person);
 	        		people.add(person);
 	        		break;
 	        	
